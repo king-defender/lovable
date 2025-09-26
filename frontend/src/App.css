@@ -1,0 +1,43 @@
+/* Custom styles for Lovable app */
+
+.App {
+  text-align: center;
+}
+
+/* Component-specific styles */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Editor styles */
+.visual-editor {
+  border: 2px dashed #e2e8f0;
+  min-height: 400px;
+}
+
+.code-preview {
+  background-color: #1a202c;
+  color: #e2e8f0;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+/* Utility classes */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
