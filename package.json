@@ -1,0 +1,54 @@
+{
+  "name": "lovable",
+  "version": "1.0.0",
+  "description": "AI-powered no-code web app builder",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:ai\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:ai": "cd ai-engine && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend && npm run test:ai",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:ai": "cd ai-engine && npm test",
+    "lint": "npm run lint:backend && npm run lint:frontend && npm run lint:ai",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:ai": "cd ai-engine && npm run lint",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../ai-engine && npm install",
+    "clean": "rm -rf */node_modules */dist */build",
+    "setup": "npm run install:all && cp .env.example .env",
+    "docker:build": "docker build -t lovable .",
+    "docker:run": "docker run -p 3000:3000 -p 3001:3001 lovable"
+  },
+  "workspaces": [
+    "frontend",
+    "backend",
+    "ai-engine"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/king-defender/lovable.git"
+  },
+  "keywords": [
+    "ai",
+    "no-code",
+    "web-builder",
+    "react",
+    "openai",
+    "supabase"
+  ],
+  "author": "Lovable Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
